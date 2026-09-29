@@ -36,11 +36,30 @@
 <td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/06_settings_price.png" alt="Настройки: прайс услуг"></td>
 <td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/07_settings_ai.png" alt="Настройки: проверка подключения к ИИ"></td>
 </tr>
+</table>
+
+<details>
+<summary><b>📱 Мобильная версия</b> — адаптивная вёрстка на экране 430×940</summary>
+
+<table>
 <tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/08_settings_deploy.png" alt="Настройки: развёртывание"></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/10_mobile_history.png" alt="Мобильный вид"></td>
+<td width="50%" align="center"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/09_mobile_home.png" alt="Мобильный вид: главная" width="240"></td>
+<td width="50%" align="center"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/10_mobile_history.png" alt="Мобильный вид: история" width="240"></td>
 </tr>
 </table>
+
+</details>
+
+<details>
+<summary><b>🚀 Вкладка «Развёртывание»</b> — готовые файлы для Streamlit Community Cloud</summary>
+
+<table>
+<tr>
+<td colspan="2" align="center"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/08_settings_deploy.png" alt="Настройки: развёртывание"></td>
+</tr>
+</table>
+
+</details>
 
 ---
 
