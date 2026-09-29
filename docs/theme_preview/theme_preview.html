@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Темы оформления — AI-конструктор КП</title>
+<style>
+  :root {
+    --primary: #174EA6;
+    --bg: #FFFFFF;
+    --secondary-bg: #EEF2F8;
+    --text: #1F2933;
+    --success-text: #1a7f37;
+    --success-bg: #dafbe1;
+    --info-text: #0969da;
+    --info-bg: #ddf4ff;
+    --border: #d8dee6;
+  }
+  [data-theme="dark"] {
+    --primary: #58A6FF;
+    --bg: #0D1117;
+    --secondary-bg: #161B22;
+    --text: #E6EDF3;
+    --success-text: #3fb950;
+    --success-bg: #12251a;
+    --info-text: #58a6ff;
+    --info-bg: #0d2235;
+    --border: #30363d;
+  }
+  [data-theme="emerald"] {
+    --primary: #0B7A4B;
+    --bg: #FFFFFF;
+    --secondary-bg: #F0F7F4;
+    --text: #263238;
+    --success-text: #1a7f37;
+    --success-bg: #dafbe1;
+    --info-text: #0B7A4B;
+    --info-bg: #e6f4ef;
+    --border: #cfd8d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+  }
+  .switcher {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; gap: 10px; align-items: center; padding: 12px 20px;
+    background: var(--secondary-bg); border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .switcher .title { font-weight: 600; margin-right: 8px; }
+  .switcher button {
+    font: inherit; font-size: 14px; cursor: pointer;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--text); padding: 6px 12px;
+  }
+  .switcher button.active { border-color: var(--primary); color: var(--primary); font-weight: 600; }
+  .app { display: flex; min-height: calc(100vh - 60px); }
+  /* ---- Сайдбар ---- */
+  .sidebar {
+    width: 300px; flex-shrink: 0; padding: 24px 20px;
+    background: var(--secondary-bg); border-right: 1px solid var(--border);
+  }
+  .sidebar .nav { list-style: none; margin: 0 0 20px; padding: 0; }
+  .sidebar .nav li { padding: 7px 10px; border-radius: 6px; margin-bottom: 2px; font-size: 15px; }
+  .sidebar .nav li.active { background: var(--primary); color: var(--bg); font-weight: 600; }
+  .sidebar .field { margin-bottom: 18px; }
+  .sidebar .field .label { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; opacity: .75; margin-bottom: 6px; }
+  .radio-group .opt {
+    padding: 6px 10px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--bg); margin-bottom: 6px; font-size: 14px;
+  }
+  .radio-group .opt.checked { border-color: var(--primary); color: var(--primary); font-weight: 600; }
+  .chip { font-size: 13px; padding: 6px 10px; border-radius: 6px; }
+  .chip.success { background: var(--success-bg); color: var(--success-text); }
+  .caption { font-size: 12px; opacity: .7; margin-top: 10px; }
+  /* ---- Контент ---- */
+  .main { flex: 1; padding: 28px 34px; min-width: 0; }
+  h1 { margin: 0 0 4px; font-size: 26px; }
+  .muted { opacity: .65; font-size: 14px; margin-bottom: 24px; }
+  .btn-row { display: flex; gap: 10px; margin: 14px 0 26px; flex-wrap: wrap; }
+  .btn {
+    font: inherit; font-size: 15px; padding: 9px 16px; border-radius: 8px; cursor: pointer;
+  }
+  .btn.primary { background: var(--primary); color: var(--bg); border: 1px solid var(--primary); }
+  .btn.secondary { background: var(--bg); color: var(--primary); border: 1px solid var(--primary); }
+  .info {
+    background: var(--info-bg); color: var(--info-text); padding: 10px 14px;
+    border-radius: 8px; font-size: 14px; margin-bottom: 26px;
+  }
+  .table-wrap { overflow-x: auto; margin-bottom: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 14px; border: 1px solid var(--border); }
+  th { background: var(--secondary-bg); font-weight: 600; }
+  td.price { text-align: right; white-space: nowrap; }
+  textarea {
+    width: 100%; min-height: 90px; font: inherit; font-size: 14px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="switcher">
+    <span class="title">Выбор темы:</span>
+    <button id="b-blue" class="active">1 · Деловой синий</button>
+    <button id="b-dark">2 · Тёмный Deep Space</button>
+    <button id="b-emerald">3 · Изумрудный</button>
+  </div>
+
+  <div class="app">
+    <!-- Сайдбар -->
+    <aside class="sidebar">
+      <ul class="nav">
+        <li>1 · Бриф</li>
+        <li class="active">2 · Черновик</li>
+        <li>3 · Предпросмотр и PDF</li>
+        <li>4 · История</li>
+        <li>5 · Настройки</li>
+      </ul>
+      <div class="field radio-group">
+        <div class="label">Роль</div>
+        <div class="opt checked">🔵 Менеджер</div>
+        <div class="opt">🟣 Руководитель</div>
+      </div>
+      <div class="field">
+        <div class="chip success">✅ ИИ: yandex — ключ настроен</div>
+      </div>
+      <div class="caption">Таймаут ИИ: 60 с на запрос</div>
+    </aside>
+
+    <!-- Контент -->
+    <main class="main">
+      <h1>2 · Черновик КП</h1>
+      <div class="muted">Клиент: <b>ООО «Ромашка»</b> · версия <b>v2</b> · статус: черновик</div>
+
+      <div class="info">
+        💡 Встроенная кнопка «Deploy» скрыта; файлы для развёртывания — на вкладке «🚀 Развёртывание».
+      </div>
+
+      <h3>Обращение</h3>
+      <textarea>Здравствуйте, ООО «Ромашка»! Наша компания предлагает…</textarea>
+
+      <div class="btn-row">
+        <button class="btn primary">🚀 Сгенерировать черновик КП</button>
+        <button class="btn secondary">📄 Предпросмотр и PDF</button>
+      </div>
+
+      <h3>Прайс услуг</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Услуга</th><th>Цена</th><th>Активна</th></tr>
+          <tr><td>ИТ-аудит</td><td class="price">25 000 ₽</td><td>да</td></tr>
+          <tr><td>Техподдержка</td><td class="price">5 000 ₽ / мес</td><td>да</td></tr>
+          <tr><td>Разработка портала</td><td class="price">цена уточняется</td><td>да</td></tr>
+        </table>
+      </div>
+    </main>
+  </div>
+
+<script>
+  const SETS = {
+    blue:   { primary: "#174EA6", bg: "#FFFFFF", secondaryBg: "#EEF2F8", text: "#1F2933" },
+    dark:   { primary: "#58A6FF", bg: "#0D1117", secondaryBg: "#161B22", text: "#E6EDF3" },
+    emerald:{ primary: "#0B7A4B", bg: "#FFFFFF", secondaryBg: "#F0F7F4", text: "#263238" },
+  };
+  function apply(name) {
+    const s = SETS[name];
+    const r = document.documentElement.style;
+    r.setProperty("--primary", s.primary);
+    r.setProperty("--bg", s.bg);
+    r.setProperty("--secondary-bg", s.secondaryBg);
+    r.setProperty("--text", s.text);
+    document.documentElement.setAttribute("data-theme", name === "dark" ? "dark" : (name === "emerald" ? "emerald" : "light"));
+    ["b-blue","b-dark","b-emerald"].forEach(id => document.getElementById(id).classList.remove("active"));
+    document.getElementById("b-" + name).classList.add("active");
+  }
+  document.getElementById("b-blue").onclick = () => apply("blue");
+  document.getElementById("b-dark").onclick = () => apply("dark");
+  document.getElementById("b-emerald").onclick = () => apply("emerald");
+</script>
+</body>
+</html>
