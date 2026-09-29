@@ -22,23 +22,23 @@
 
 <table>
 <tr>
-<td width="50%"><img src="docs/screenshots/01_home.png" alt="Главная — дашборд"></td>
-<td width="50%"><img src="docs/screenshots/02_brief.png" alt="Бриф с валидацией"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/01_home.png" alt="Главная — дашборд"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/02_brief.png" alt="Бриф с валидацией"></td>
 </tr>
 <tr>
-<td colspan="2" align="center"><img src="docs/screenshots/03_draft.png" alt="Редактор черновика по разделам"></td>
+<td colspan="2" align="center"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/03_draft.png" alt="Редактор черновика по разделам"></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/screenshots/04_preview.png" alt="Предпросмотр и PDF"></td>
-<td width="50%"><img src="docs/screenshots/05_history.png" alt="История версий КП"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/04_preview.png" alt="Предпросмотр и PDF"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/05_history.png" alt="История версий КП"></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/screenshots/06_settings_price.png" alt="Настройки: прайс услуг"></td>
-<td width="50%"><img src="docs/screenshots/07_settings_ai.png" alt="Настройки: проверка подключения к ИИ"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/06_settings_price.png" alt="Настройки: прайс услуг"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/07_settings_ai.png" alt="Настройки: проверка подключения к ИИ"></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/screenshots/08_settings_deploy.png" alt="Настройки: развёртывание"></td>
-<td width="50%"><img src="docs/screenshots/10_mobile_history.png" alt="Мобильный вид"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/08_settings_deploy.png" alt="Настройки: развёртывание"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/helkli/kp-constructor/main/docs/screenshots/10_mobile_history.png" alt="Мобильный вид"></td>
 </tr>
 </table>
 
