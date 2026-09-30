@@ -106,17 +106,20 @@
 
 ---
 
-## 🚀 Быстрый старт
+## 🚀 Запуск проекта
+
+> 📄 **[Полная инструкция по локальному запуску → `docs/ЗАПУСК.md`](docs/ЗАПУСК.md)** —
+> виртуальное окружение, получение ключа ИИ по шагам, проверка подключения, роли,
+> сброс базы и таблица «если что-то пошло не так».
+
+Коротко — три команды:
 
 ```bash
-# 1. Настройки и ключ
-cp .env.example .env          # Windows: copy .env.example .env
-
-# 2. Зависимости
+git clone https://github.com/helkli/kp-constructor.git
+cd kp-constructor
+cp .env.example .env          # Windows: copy .env.example .env  → заполнить ключ ИИ
 pip install -r requirements.txt
-
-# 3. Запуск
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 Приложение откроется на `http://localhost:8501`.
@@ -247,7 +250,10 @@ fin_proekt/
 │   └── logging_util.py     # логи вызовов ИИ без ПДн
 ├── scripts/                # ключи GigaChat, тест ИИ, демо-данные
 ├── tests/                  # pytest
-└── docs/                   # отчёт-кейс и скриншоты
+└── docs/
+    ├── ЗАПУСК.md           # подробная инструкция локального запуска
+    ├── case_report.md      # отчёт-кейс
+    └── screenshots/        # скриншоты интерфейса для README
 ```
 
 ---
@@ -270,6 +276,7 @@ fin_proekt/
 
 - [`AGENTS.md`](AGENTS.md) — спецификация продукта и правила проекта.
 - [`ТЗ.md`](ТЗ.md) — техническое задание.
+- [`docs/ЗАПУСК.md`](docs/ЗАПУСК.md) — **инструкция локального запуска**: окружение, ключи, проверка, решение проблем.
 - [`docs/case_report.md`](docs/case_report.md) — отчёт-кейс: проблема → MVP → реализация → проверка → развитие, и разбор работы ИИ.
 
 ---
